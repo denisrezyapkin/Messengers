@@ -1,0 +1,215 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.sbw{
+   position: fixed;
+   bottom: 20px;
+   right: 50px;
+   width: 85px;
+   height: auto;
+   display: none;
+}
+
+.show {
+   display: unset;
+   opacity: 1;
+}
+
+.hide {
+   display: unset;
+}
+
+.close {
+   transition: .5s;
+   transform: translateX(500px);
+   opacity: 0;
+}
+
+.open {
+   transition: 2s;
+}
+
+#whatsapp, #viber, #telegram, #socialButton {
+   width: 75px;
+   padding: 5px 0;
+   cursor: pointer;
+}
+
+#socialButton {
+   position: fixed;
+   bottom: 20px;
+   right: 60px;
+}
+
+
+.show #whatsapp {
+   position: absolute;
+   bottom: 0px;
+   opacity: 0;
+   animation-name: showWhatsapp;
+   animation-duration: 1.5s;
+   animation-delay: .5s;
+   animation-fill-mode: forwards;
+}
+
+.show #viber {
+   position: absolute;
+   bottom: 0px;
+   animation-name: showViber;
+   animation-duration: 1s;
+   animation-fill-mode: forwards;
+}
+
+.show #telegram {
+   position: absolute;
+   bottom: 0px;
+   opacity: 0;
+   animation-name: showTelegram;
+   animation-duration: 1.45s;
+   animation-delay: .5s;
+   animation-fill-mode: forwards;
+}
+
+.hide #whatsapp {
+   position: absolute;
+   bottom: 0px;
+   opacity: 0;
+   animation-name: hideWhatsapp;
+   animation-duration: 1.5s;
+   animation-fill-mode: forwards;
+}
+
+.hide #viber {
+   position: absolute;
+   bottom: 0px;
+   animation-name: hideViber;
+   animation-duration: 1s;
+   animation-delay: 1s;
+   animation-fill-mode: forwards;
+}
+
+.hide #telegram {
+   position: absolute;
+   bottom: 0px;
+   opacity: 0;
+   animation-name: hideTelegram;
+   animation-duration: 1.45s;
+   animation-fill-mode: forwards;
+}
+
+#closeButton {
+   position: absolute;
+   bottom: 250px;
+   right: 5px;
+   width: 16px;
+   height: 16px;
+   cursor: pointer;
+   display: none;
+   opacity: 0.5;
+   padding: 5px;
+ }
+
+ #closeButton:hover {
+    opacity: 1;
+ }
+
+ .show #closeButton {
+    display: unset;
+ }
+ 
+ #closeButton:before, #closeButton:after {
+   position: absolute;
+   left: 15px;
+   content: ' ';
+   height: 16px;
+   width: 2px;
+   background-color: #333;
+ }
+ #closeButton:before {
+   transform: rotate(45deg);
+ }
+ #closeButton:after {
+   transform: rotate(-45deg);
+ }
+
+@keyframes hideViber {
+   0% {
+      opacity: 1;
+      right: 10px;
+   }
+   99% {
+      opacity: 0;
+      right: 0;
+      right: -50px;
+      transform: rotate(360deg);
+   }
+   100%{
+      transform: translateX(150px);
+   }
+}
+
+@keyframes hideWhatsapp {
+   0% {
+      bottom: 85px;
+      opacity: 1;
+      transform: rotate(360deg);
+   }
+   99% {
+      bottom: 0;
+   }
+   100%{
+      display: none;
+   }
+}
+
+@keyframes hideTelegram {
+   0% {
+      bottom: 170px;
+      opacity: 1;
+      transform: rotate(360deg) scale(1.1);
+   }
+   99% {
+      bottom: 0;
+   }
+   100%{
+      display: none;
+   }
+}
+
+@keyframes showViber {
+   0% {
+      opacity: 0;
+      right: 0;
+      right: -50px;
+   }
+   100% {
+      transform: rotate(360deg);
+      opacity: 1;
+      right: 10px;
+   }
+}
+
+@keyframes showWhatsapp {
+   0% {
+      bottom: 0;
+   }
+   100% {
+      bottom: 85px;
+      opacity: 1;
+      transform: rotate(360deg);
+   }
+}
+
+@keyframes showTelegram {
+   0% {
+      bottom: 0;
+   }
+   100% {
+      bottom: 170px;
+      opacity: 1;
+      transform: rotate(360deg) scale(1.1);
+      
+   }
+}
